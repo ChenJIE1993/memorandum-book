@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>备忘录</title>
+	<style type="text/css">
+		*{
+			box-sizing:border-box;
+		}
+		body{
+			margin:0;
+			font-family: 楷体;
+			background-image: url('/images/bg.jpg');
+			padding: 45px 0;
+		}
+		header{
+			height:44px;
+			text-align: center;
+			font-weight: bold;
+			padding: 10px 5px;
+			border-bottom: 1px solid #aaaaaa;
+			display: flex;
+			justify-content: space-between;
+			position: fixed;
+			top: 0;
+			width:100%;		
+		}
+		header>span:first-child{
+			width:50px;
+			background-image: url('/images/back.jpg');
+			background-size:23px ;
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}
+		header>span:last-child{
+			width:50px;
+			color:#e4af0a;
+			text-align: right;
+			padding-right: 5px;
+		}	
+		main{
+			padding-left: 15px;
+			border-bottom:1px solid #c8c7cc;
+			color: #454545;
+		}
+		main>div{
+			height:65px;
+			border-bottom:1px solid red;
+			padding:12px 0;
+		}
+		main>div>h3{
+			font-size: 1.5rem;
+			font-weight: normal;
+			margin:0;
+		}
+		main>div>time{
+			height: 45px;
+			/*border-top:1px solid red;*/
+			color: blue;
+			font-size: 1rem;
+		}
+		footer{
+			width:100%;
+			height:45px;
+			border-top:1px solid gold;
+			position: fixed;
+			bottom:0;
+			display: flex;
+			justify-content: space-between;
+		}
+		footer>span:first-child{
+			width:50px;
+		}
+		footer>span:nth-child(2){
+			/*margin-top: 10px;*/
+			line-height: 45px;
+			font-size: 1rem;
+			font-weight: bold;
+		}
+		footer>span:last-child{
+			width: 50px;
+			line-height: 45px;
+			background-size: 30px;
+			background-image: url('/images/new.jpg');
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<span onclick="history.back()"></span>
+		<span>{{foldername}}</span>
+		<span>编辑</span>
+	</header>
+	<main>
+		{{each files as file i}}
+		<div>
+			<h3>{{file.name | filename }}</h3>
+			<time>{{file.time | formatTime}}</time>
+		</div>
+		{{/each}}
+	</main>
+	<footer>
+		<span></span>
+		<span>{{files.length}}个{{foldername}}</span>
+		<span onclick='location.href="/folder/{{foldername}}/new"'></span>
+	</footer>
+</body>
+</html>

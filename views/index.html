@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>备忘录</title>
+	<link rel="stylesheet" type="text/css" href="libs/zy-layer/css/alert.css">
+	<link rel="stylesheet" type="text/css" href="libs/zy-layer/css/confirm.css">
+	<link rel="stylesheet" type="text/css" href="libs/zy-layer/css/prompt.css">
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			margin:0;
+			font-family: 微软雅黑;
+			background-image: url('images/bg.jpg');
+			padding: 45px 0;
+		}
+		header{
+			width: 100%;
+			height: 44px;
+			text-align: center;
+			font-weight: bold;
+			border-bottom:1px solid #aaaaaa;
+			padding: 10px 5px;
+			position: fixed;
+			top:0;
+			display: flex;
+			justify-content: space-between;
+		}
+		header>span:first-child{
+			width:50px;
+		}
+		header>span:last-child{
+			width:50px;
+			color:#aaaaaa;
+			text-align: right;
+			font-weight:normal;
+			padding-right: 5px;
+		}
+		main{
+			padding-left: 15px;
+			border-bottom: 1px solid #c8c7cc;
+			color:#454545;
+		}
+		main>div{
+			height: 45px;
+			border-bottom: 1px solid #c8c7cc;
+			padding:12px 0;
+			cursor: pointer;
+		}
+		main>div:last-child{
+			border:none;
+		}
+		main>div>img{
+			width: 14px;
+			float: right;
+			margin: 4px 10px 0 0;
+		}
+		main>div>span{
+			float:right;
+			margin-right:15px;
+		}
+		footer{
+			height:45px;
+			border-top:1px solid #a9a9a9;
+			position: fixed;
+			bottom:0;
+			width: 100%;
+			text-align: right;
+			color:#3B3DFF;
+			padding: 10px;			
+		}
+		footer>span{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<span></span>
+		<span>文件夹</span>
+		<span>编辑</span>
+	</header>
+	<main>
+		{{each folders as folder i}}
+		<div onclick='location.href="/folder/{{folder.name}}"'>
+			{{folder.name}}
+			<img src="images/arrow.jpg" alt="">
+			<span>{{folder.count}}</span>	
+		</div>
+		{{/each}}
+	</main>
+	<footer>
+		<span>新建文件夹</span>
+	</footer>
+	<script type="text/javascript" src='libs/jquery-3.1.1.js'></script>
+	<script type="text/javascript" src='libs/zy-layer/js/alert.js'></script>
+	<script type="text/javascript" src='libs/zy-layer/js/confirm.js'></script>
+	<script type="text/javascript" src='libs/zy-layer/js/prompt.js'></script>
+	<script type="text/javascript" src='scripts/index.js'></script>
+</body>
+</html>

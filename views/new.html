@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>备忘录</title>
+	<link rel="stylesheet" type="text/css" href="/libs/zy-layer/css/alert.css">
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		html{
+			height:100%;
+		}
+		body{
+			margin:0;
+			background-image: url('/images/bg.jpg');
+			padding: 45px 0;
+			height: 100%;
+		}
+		header{
+			width:100%;
+			height:44px;
+			font-weight: bold;
+			padding: 10px 5px;
+			display: flex;
+			justify-content: space-between;
+			position: fixed;
+			top:0;
+		}
+		header>span:first-child{
+			width:200px;
+			background-image: url('/images/back.jpg');
+			background-size: 23px;
+			background-repeat: no-repeat;
+			padding-left: 25px;
+			cursor: pointer;
+		}
+		main{
+			height: 100%;
+			padding: 10px 25px;
+			color:#454545;
+		}
+		#note{
+			width:100%;
+			height:100%;
+			border:none;
+			background: none;
+			resize: none;
+			font-size: 2rem;
+			color: gold;
+		}
+		footer{
+			width: 100%;
+			height: 45px;
+			padding: 10px;
+			color: #003322;
+			position: fixed;
+			bottom:0;
+			border-top:1px solid gold;
+			display: flex;
+			justify-content: space-between;
+		}
+		footer>span{
+			width:50px;
+			background-size: 25px;
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}
+		footer>span:nth-child(1){
+			background-image: url('/images/remove.jpg')
+		}
+		footer>span:nth-child(2){
+			background-image: url('/images/check.jpg')
+		}
+		footer>span:nth-child(3){
+			background-image: url('/images/camera.jpg')
+		}
+		footer>span:nth-child(4){
+			background-image: url('/images/draw.jpg')
+		}
+		footer>span:nth-child(5){
+			background-image: url('/images/new.jpg')
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<span>{{foldername}}</span>
+	</header>
+	<main>
+		<textarea id="note"></textarea>
+	</main>
+	<footer>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</footer>
+	<script src='/libs/jquery-3.1.1.js'></script>
+	<script src='/libs/zy-layer/js/alert.js'></script>
+	<script type="text/javascript" src='/scripts/new.js'></script>
+</body>
+</html>
